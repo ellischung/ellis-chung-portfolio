@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import Scramble from "react-scramble";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useScramble } from "use-scramble";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
@@ -14,20 +14,32 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-  const [restart, setRestart] = useState<null | (() => void)>(null);
-
-  useEffect(() => {
-    if (restart) {
-      const interval = setInterval(() => restart(), 3600);
-      return () => clearInterval(interval);
-    }
-  }, [restart]);
-
-  const bindScrambleMethod = (controls: any) => {
-    if (controls && typeof controls.restart === "function") {
-      setRestart(() => controls.restart);
-    }
-  };
+  const { ref: nameRef, replay } = useScramble({
+    text: "ellis chung",
+    speed: 0.25,
+    tick: 5,
+    step: 1,
+    scramble: 10,
+    seed: 0,
+  });
+  const [text, setText] = useState("software engineer");
+  const { ref: careerRef } = useScramble({
+    text,
+    speed: 0.25,
+    tick: 1,
+    step: 1,
+    scramble: 10,
+    seed: 10,
+    onAnimationEnd: () => {
+      setTimeout(() => {
+        setText((prevText) =>
+          prevText === "software engineer"
+            ? "full-stack developer"
+            : "software engineer"
+        );
+      }, 1000);
+    },
+  });
 
   return (
     <section
@@ -61,58 +73,15 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <p className="mb-4 text-4xl font-light sm:text-8xl sm:font-thin sm:mb-8">
-          <Scramble
-            autoStart
-            text="ellis chung"
-            mouseEnterTrigger="restart"
-            steps={[
-              {
-                roll: 15,
-                action: "+",
-                type: "all",
-              },
-              {
-                action: "-",
-                type: "forward",
-              },
-            ]}
-          />
-        </p>
-        <p className="mb-8 font-light sm:mb-16 sm:font-thin sm:text-4xl">
-          <Scramble
-            autoStart
-            text="software engineer"
-            bindMethod={bindScrambleMethod}
-            steps={[
-              {
-                roll: 15,
-                action: "+",
-                type: "all",
-              },
-              {
-                action: "-",
-                type: "forward",
-              },
-              {
-                action: "-",
-              },
-              {
-                action: "-",
-              },
-              {
-                text: "full stack developer",
-                roll: 15,
-                action: "+",
-                type: "all",
-              },
-              {
-                action: "-",
-                type: "forward",
-              },
-            ]}
-          />
-        </p>
+        <p
+          ref={nameRef}
+          className="mb-4 text-4xl font-light sm:text-8xl sm:font-thin sm:mb-8"
+          onMouseEnter={replay}
+        />
+        <p
+          ref={careerRef}
+          className="mb-8 font-light sm:mb-16 sm:font-thin sm:text-4xl"
+        />
         <p>
           Hello! I'm a full-stack developer based in NY and I enjoy building
           sites & apps for my clients. My focus is{" "}
