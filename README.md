@@ -1,6 +1,6 @@
 # Ellis Chung Portfolio Site
 
-## ellischung.github.io
+## Site is live @ [ellischung.dev](https://ellischung.dev)
 
 - Latest Next.js 13 features
 - Next.js App Router

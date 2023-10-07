@@ -18,6 +18,16 @@ const fadeInAnimationVariants = {
       delay: 0.05 * index,
     },
   }),
+  hover: {
+    scale: [1, 1.45, 1.05],
+    rotate: Math.random() > 0.5 ? [0, 5, -5, 0] : [0, -5, 5, 0],
+    skew: 10,
+    rotateY: 45,
+    rotateX: 180,
+    transition: {
+      perspective: 10,
+    },
+  },
 };
 
 export default function Skills() {
@@ -38,6 +48,7 @@ export default function Skills() {
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
+            whileHover="hover"
             viewport={{
               once: true,
             }}
