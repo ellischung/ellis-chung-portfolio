@@ -1,10 +1,10 @@
 import { forwardRef } from "react";
 
-export const ModelSpinner: React.FC = () => (
+const ModelSpinner: React.FC = () => (
   <div className="w-16 h-16 border-t-6 border-white border-solid rounded-full custom-spin absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
 );
 
-export const ModelContainer = forwardRef<
+const ModelContainer = forwardRef<
   HTMLDivElement,
   { children: React.ReactNode }
 >(({ children }, ref) => (
@@ -16,6 +16,8 @@ export const ModelContainer = forwardRef<
   </div>
 ));
 
+ModelContainer.displayName = "ModelContainer";
+
 export default function Loader() {
   return (
     <ModelContainer>
@@ -23,3 +25,5 @@ export default function Loader() {
     </ModelContainer>
   );
 }
+
+export { ModelContainer, ModelSpinner };
