@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 const ModelSpinner: React.FC = () => (
-  <div className="w-16 h-16 border-t-6 border-white border-solid rounded-full custom-spin absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+  <div className="border-t-2 border-gray-800 border-solid rounded-full w-12 h-12 spinner animate-spin"></div>
 );
 
 const ModelContainer = forwardRef<
