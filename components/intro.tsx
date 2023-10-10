@@ -1,15 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useScramble } from "use-scramble";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import Loader from "./model-loader";
+
+const LazyModel = dynamic(() => import("./model"), {
+  ssr: false,
+  loading: () => <Loader />,
+});
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -48,28 +54,11 @@ export default function Intro() {
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem] font-roboto-mono"
     >
       <div className="flex items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            type: "tween",
-            duration: 0.2,
-          }}
-        >
-          <Image
-            src="/ellis-photo.jpg"
-            alt="ellis"
-            width="192"
-            height="192"
-            quality="95"
-            priority={true}
-            className="h-48 w-48 rounded-full object-cover border-white shadow-xl"
-          />
-        </motion.div>
+        <LazyModel />
       </div>
 
       <motion.h1
-        className="mb-10 mt-8 px-4 !leading-[1.5] sm:text-2xl"
+        className="mb-10 -mt-2 px-4 !leading-[1.5] sm:text-2xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
@@ -80,7 +69,7 @@ export default function Intro() {
         />
         <p
           ref={careerRef}
-          className="mb-8 font-light sm:mb-16 sm:font-thin sm:text-4xl"
+          className="mb-5 font-light sm:mb-10 sm:font-thin sm:text-4xl"
         />
         <p>
           Hello! I'm a full-stack developer based in NY and I enjoy building

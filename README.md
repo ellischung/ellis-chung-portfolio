@@ -1,4 +1,4 @@
-# Ellis Chung Portfolio Site
+# Ellis Chung Portfolio
 
 ## Site is live @ [ellischung.dev](https://ellischung.dev)
 
@@ -6,10 +6,11 @@
 - Next.js App Router
 - Next.js Server Actions
 - Client & Server Components
-- TypeScript (Beginner & Intermediate)
+- TypeScript
 - Tailwind CSS
 - Context API
 - Advanced Animations with Framer Motion
+- Animated 3D Graphics with Three.js
 - React.Email & Resend
 - Custom React hooks
 - Fresh, modern UI design
