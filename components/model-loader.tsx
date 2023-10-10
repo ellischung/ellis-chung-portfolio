@@ -10,7 +10,7 @@ const ModelContainer = forwardRef<
 >(({ children }, ref) => (
   <div
     ref={ref}
-    className="relative m-auto mt-[-30px] w-[250px] h-[250px] md:w-[317.52px] md:h-[317.52px] md:mt-[-60px] lg:w-[423.36px] lg:h-[423.36px] lg:mt-[-90px]"
+    className="relative m-auto w-[250px] h-[250px] md:w-[317.52px] md:h-[317.52px] md:mt-[-60px] lg:w-[423.36px] lg:h-[423.36px] lg:mt-[-90px]"
   >
     {children}
   </div>

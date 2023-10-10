@@ -48,7 +48,13 @@ export default function Model() {
         20 * Math.cos(0.2 * Math.PI)
       );
 
-      const scale = scH * 0.005 + 1.15;
+      let scale;
+      if (window.innerWidth <= 640) {
+        scale = scH * 0.003 + 1.1;
+      } else {
+        scale = scH * 0.005 + 1.15;
+      }
+
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
