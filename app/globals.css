@@ -15,6 +15,10 @@ html.dark {
   @apply border border-black/10;
 }
 
+img {
+  aspect-ratio: 1 / 1;
+}
+
 .spinner {
   position: absolute;
   left: 50%;

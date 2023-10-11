@@ -50,7 +50,7 @@ export default function Model() {
 
       let scale;
       if (window.innerWidth <= 640) {
-        scale = scH * 0.003 + 1.1;
+        scale = scH * 0.005 + 1.75;
       } else {
         scale = scH * 0.005 + 1.15;
       }
