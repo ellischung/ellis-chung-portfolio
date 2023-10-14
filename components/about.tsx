@@ -12,7 +12,7 @@ export default function About() {
   return (
     <motion.section
       ref={ref}
-      className="mb-28 max-w-[65rem] leading-8 scroll-mt-28 font-roboto-mono sm:mb-40"
+      className="mb-28 max-w-[55rem] leading-8 scroll-mt-28 font-roboto-mono sm:mb-40"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
@@ -27,7 +27,7 @@ export default function About() {
           height="240"
           quality="95"
           priority={true}
-          className="mb-8 h-60 w-60 rounded-full object-cover border-2 dark:border-white shadow-xl lg:mb-0 lg:mr-24"
+          className="mb-8 h-24 w-24 rounded-full object-cover border-2 dark:border-white shadow-xl lg:mb-0 lg:mr-24 lg:h-60 lg:w-60"
         />
         <div>
           <p className="mb-3">
@@ -45,16 +45,14 @@ export default function About() {
             <span className="italic">front-end development</span>. It is my
             mission to create seamless and aesthically pleasing web experiences
             tailored to meet my clients' needs. Ensuring that every project is
-            both user-friendly and beautiful is at the core of what I do. I am
-            also always looking to learn new technologies; I am currently
-            mastering TypeScript and am familiar with Prisma.
+            both user-friendly and beautiful is at the core of what I do.
           </p>
           <p>
             <span className="italic">Outside of programming</span>, I indulge in
             my other passions such as b-boying, building PCs, and learning about
-            new PC hardware. I also enjoy playing video games and watching
-            anime. I love <span className="underline">learning new things</span>{" "}
-            and I am currently trying to get better at Japanese. 頑張ります!
+            new tech. I also enjoy playing video games and watching anime. I
+            love <span className="underline">learning new things</span> and I am
+            currently trying to get better at Japanese. 頑張ります!
           </p>
         </div>
       </div>
