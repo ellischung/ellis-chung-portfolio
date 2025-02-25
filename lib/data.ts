@@ -1,3 +1,4 @@
+import nexacoinImg from "@/public/nexacoin.png";
 import marketplusplusImg from "@/public/marketplusplus.png";
 import overclockedImg from "@/public/overclocked.png";
 import recmeanimeImg from "@/public/recmeanime.png";
@@ -29,11 +30,11 @@ export const links = [
 
 export const projectsData = [
   {
-    title: "Market++",
+    title: "NexaCoin",
     description:
-      "A full stack MERN web app that aggregates Facebook Marketplace, eBay, OfferUp, craigslist, and Etsy into one easy-to-use platform.",
-    tags: ["React", "Node.js", "Express", "MongoDB", "GraphQL", "Puppeteer"],
-    imageUrl: marketplusplusImg,
+      "An innovative cryptocurrency platform for real-time analytics and streamlined portfolio management built with Next.js and TypeScript.",
+    tags: ["Next.js", "TypeScript", "Redux", "Chart.js", "TailwindCSS"],
+    imageUrl: nexacoinImg,
   },
   {
     title: "Overclocked",
@@ -41,6 +42,13 @@ export const projectsData = [
       "An e-commerce web app for selling PC components and tech services. Utilizes e-commerce APIs from Commerce.js and Stripe.",
     tags: ["React", "Commerce.js", "Stripe"],
     imageUrl: overclockedImg,
+  },
+  {
+    title: "Market++",
+    description:
+      "A full stack MERN web app that aggregates Facebook Marketplace, eBay, OfferUp, craigslist, and Etsy into one easy-to-use platform.",
+    tags: ["React", "Node.js", "Express", "MongoDB", "GraphQL", "Puppeteer"],
+    imageUrl: marketplusplusImg,
   },
   {
     title: "RecMeAnime",

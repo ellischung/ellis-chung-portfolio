@@ -72,8 +72,11 @@ export default function Intro() {
           className="mb-5 font-light sm:mb-10 sm:font-thin sm:text-4xl"
         />
         <p>
-          Hello! I'm a full-stack developer based in NY and I enjoy building
-          sites & apps for my clients. My focus is{" "}
+          Hello! I'm a full-stack developer @{" "}
+          <a href="https://www.squaredmade.com/" className="underline cursor-pointer" target="_blank">
+            Squared
+          </a>{" "}
+          and I enjoy building sites & apps for my clients. My focus is{" "}
           <span className="underline">React (Next.js)</span>.
         </p>
       </motion.h1>
